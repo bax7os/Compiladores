@@ -63,5 +63,18 @@ To compile and run the MiniJava compiler, you need a C++ compiler like g++.
 Open your terminal, navigate to the directory containing all the `.cpp` and `.h` files, and run the following command to compile the project. This will create an executable file named `minijavac`.
 
 ```bash
-g++ -std=c++11 -o minijavac main.cpp scanner.cpp parser.cpp symboltable.cpp stentry.cpp
+g++ -o minijavac *.cpp
 ```
+
+### 2. Execution
+
+Once compiled, you can run the compiler by passing it a MiniJava source file (.mj) as a command-line argument
+
+```bash
+./minijavac <your_file.mj>
+```
+
+If the code in **`<your_file.mj>`** is syntactically correct, the program will output:
+**`Analise sintatica concluida com sucesso!`**
+
+If there are any lexical or syntax errors, the compiler will stop and report the error with its line number.
