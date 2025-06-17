@@ -1,0 +1,6 @@
+// Testa a estrutura mais simples possível: uma classe principal com um comando.
+class TesteBasico {
+    public static void main(String[] a) {
+        System.out.println(1);
+    }
+}

@@ -1,0 +1,13 @@
+class Principal {
+    public static void main(String[] args) {
+        System.out.println(1);
+    }
+}
+
+class Teste {
+    // ERRO: A gramática exige que todo método tenha um 'return'.
+    public int metodo() {
+        int x;
+        x = 1;
+    }
+}

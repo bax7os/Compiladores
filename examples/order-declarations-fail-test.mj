@@ -1,0 +1,8 @@
+class Teste {
+    // ERRO: Métodos não podem ser declarados antes de variáveis de classe.
+    public int getAlgo() {
+        return 1;
+    }
+    
+    int algo; 
+}

@@ -1,0 +1,23 @@
+class Principal {
+    public static void main(String[] args) {
+        // A gramática permite apenas um único statement no main.
+        // Para executar mais de uma ação, usamos um bloco.
+        {
+            System.out.println(0);
+        }
+    }
+}
+
+// Testa declarações de variáveis e métodos.
+class Calculadora {
+    int numero;
+    boolean status;
+    int[] historico;
+
+    // Testa MethodDeclaration com Params e Return
+    public int somar(int a, int b) {
+        int resultado;
+        resultado = a + b;
+        return resultado;
+    }
+}

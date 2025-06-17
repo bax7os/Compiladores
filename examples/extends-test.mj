@@ -1,0 +1,22 @@
+class Principal {
+    public static void main(String[] args) {
+        System.out.println(1);
+    }
+}
+
+class Veiculo {
+    int velocidade;
+
+    public int getVelocidade() {
+        return velocidade;
+    }
+}
+
+// Testa a palavra-chave 'extends'
+class Carro extends Veiculo {
+    int numPortas;
+
+    public int getNumPortas() {
+        return numPortas;
+    }
+}

@@ -1,0 +1,38 @@
+class Principal {
+    public static void main(String[] args) {
+        System.out.println(123);
+    }
+}
+
+class TesteDeComandos {
+    int[] dados;
+
+    public int executar() {
+        int i;
+        int max;
+        boolean pronto;
+
+        i = 0;
+        max = 10;
+        pronto = false;
+        dados = new int[10];
+
+        // Testa o comando 'while'
+        while (i < max) {
+            // Testa o comando 'if-else'
+            if (i < 5) {
+                dados[i] = i * 2; // Testa atribuição em array
+            } else {
+                dados[i] = i * 3;
+            }
+            i = i + 1; // Testa atribuição simples
+        }
+        
+        // Testa o bloco de statements
+        {
+            System.out.println(999);
+        }
+
+        return i;
+    }
+}

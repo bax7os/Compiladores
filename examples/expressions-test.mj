@@ -1,0 +1,51 @@
+
+class Principal {
+    public static void main(String[] args) {
+        System.out.println(1);
+    }
+}
+
+class TesteExp {
+    int[] valores;
+    TesteExp outro;
+
+    public int calcular() {
+        int a;
+        int b;
+        int c;
+        boolean flag;
+        
+        // Precedência de operadores: deve calcular (1 + (2 * 3))
+        a = 1 + 2 * 3; 
+
+        // Parênteses para mudar a precedência
+        b = (1 + 2) * 3;
+
+        // Expressões booleanas complexas
+        flag = (a < b) && !(b < 10);
+        
+        // Criação de array e uso de .length
+        valores = new int[a];
+        c = valores.length;
+        
+        // Acesso a array
+        valores[0] = c;
+        
+        // Criação de objeto e uso de 'this'
+        outro = new TesteExp();
+        
+        // Encadeamento de chamadas (simulado) e chamada com argumento
+        // Supondo que getThis() retorna um objeto TesteExp
+        c = this.getValor(a + b);
+
+        return c;
+    }
+    
+    public TesteExp getThis() {
+        return this;
+    }
+
+    public int getValor(int x) {
+        return x;
+    }
+}

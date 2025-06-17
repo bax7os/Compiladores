@@ -1,0 +1,13 @@
+class Principal {
+    public static void main(String[] args) {
+        System.out.println(1);
+    }
+}
+class Teste {
+    public int metodo() {
+        // ERRO: Uma expressão como "1 + 2" não é um comando (Statement) válido.
+        // Só atribuições, while, if, etc., são comandos.
+        1 + 2; 
+        return 0;
+    }
+}
