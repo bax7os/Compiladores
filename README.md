@@ -80,3 +80,5 @@ If the code in **`<your_file.mj>`** is syntactically correct, the program will o
 **`Syntax analyzer and semantic analyzer completed!`**
 
 If there are any lexical or syntax errors, the compiler will stop and report the error with its line number.
+
+Group: Ana Clara Bastos Moraes
