@@ -11,7 +11,7 @@ class TesteDeComandos {
         int i;
         int max;
         boolean pronto;
-
+/**/
         i = 0;
         max = 10;
         pronto = false;

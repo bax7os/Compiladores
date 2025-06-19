@@ -1,16 +1,18 @@
 # MiniJava Compiler
 
-This project is a basic compiler for MiniJava, a subset of the Java programming language. It is implemented in C++ and features a lexical analyzer (scanner) and a syntax analyzer (parser) that work together to validate MiniJava source code. The compiler is designed to identify and report lexical and syntax errors based on a predefined grammar.
+This project is a compiler for MiniJava, a subset of the Java programming language. It is implemented in C++ and performs a three-stage compilation process: lexical, syntax, and semantic analysis.
+
+The compiler is designed to validate MiniJava source code, ensuring not only that the program's structure is grammatically correct but also that the code is semantically valid. This includes type checking, scope resolution, and validation of variable and method declarations.
 
 ## Structure
 
-The compiler's architecture is modular, with different components handling specific tasks. Below is a breakdown of the key files and their roles:
+The compiler's architecture is modular, with distinct components for each analysis phase.
 
-- **`main.cpp`**: This is the entry point of the program. It handles reading the MiniJava source file from the command line, initializes the global symbol table with reserved words, and orchestrates the scanner and parser to begin the compilation process.
+- **`main.cpp`**: The program's entry point. It is responsible for reading the source file from the command line, initializing the global symbol table with reserved words, and orchestrating the execution of the analysis phases.
 
 - **`scanner.h` & `scanner.cpp`**: This is the **lexical analyzer**. The `Scanner` class reads the source code character by character and groups them into a stream of tokens. It identifies keywords, identifiers, integer literals, operators, and separators. It also handles the removal of whitespace and comments (both single-line `//` and block `/* */`).
 
-- **`parser.h` & `parser.cpp`**: This is the **syntax analyzer**. The `Parser` class takes the stream of tokens from the scanner and verifies if it conforms to the MiniJava grammar rules. It employs a recursive descent parsing strategy to process the grammatical structure of the code. The parser also manages scopes by creating and using different symbol tables for classes, methods, and the main scope.
+- **`parser.h` & `parser.cpp`**: This is the **syntax analyzer and semantic analyzer**. The `Parser` class takes the stream of tokens from the scanner and verifies if it conforms to the MiniJava grammar rules. Using a multi-pass pre-scan approach, the parser now performs a complete, syntax-directed semantic analysis. Its responsibilities include: Validating the grammatical structure of the code; Orchestrating all semantic checks; Managing the creation and lifecycle of scopes (global, class, method).
 
 - **`token.h`**: This file defines the `Token` class and an `enum` of all possible token types (`ID`, `INTEGER_LITERAL`, `RESERVED`, etc.). Each token object stores its type, the actual text (lexeme), and an optional attribute.
 
@@ -60,10 +62,10 @@ To compile and run the MiniJava compiler, you need a C++ compiler like g++.
 
 ### 1. Compilation
 
-Open your terminal, navigate to the directory containing all the `.cpp` and `.h` files, and run the following command to compile the project. This will create an executable file named `minijavac`.
+Open your terminal, navigate to the directory containing all the `.cpp` and `.h` files, and run the following command to compile the project. This will create an executable file named `mj_compiler`.
 
 ```bash
-g++ -o minijavac *.cpp
+g++ -o mj_compiler *.cpp
 ```
 
 ### 2. Execution
@@ -71,10 +73,10 @@ g++ -o minijavac *.cpp
 Once compiled, you can run the compiler by passing it a MiniJava source file (.mj) as a command-line argument
 
 ```bash
-./minijavac <your_file.mj>
+./mj_compiler <your_file.mj>
 ```
 
 If the code in **`<your_file.mj>`** is syntactically correct, the program will output:
-**`Analise sintatica concluida com sucesso!`**
+**`Syntax analyzer and semantic analyzer completed!`**
 
 If there are any lexical or syntax errors, the compiler will stop and report the error with its line number.

@@ -1,6 +1,46 @@
-// Testa a estrutura mais simples possível: uma classe principal com um comando.
-class TesteBasico {
+class Principal {
     public static void main(String[] a) {
-        System.out.println(1);
+        System.out.println(new Executor().iniciar());
+    }
+}
+
+class Executor {
+    int valorGlobal;
+    boolean flagGlobal;
+    int[] arrayGlobal;
+
+    public int iniciar() {
+        int temp;
+        int i;
+        boolean pronto;
+        Executor outroExecutor;
+
+       
+        valorGlobal = (10 + 2) * 3; // valorGlobal = 36
+        
+     
+        if ((valorGlobal < 50) && !(1 == 2)) {
+            pronto = true;
+        } else {
+            pronto = false;
+        }
+
+     
+        i = 0;
+        arrayGlobal = new int[10];
+        while (i < (arrayGlobal.length)) {
+            arrayGlobal[i] = i;
+            i = i + 1;
+        }
+
+      
+        temp = this.calculaDobro(arrayGlobal[5]); // Deve ser 10
+
+        return temp;
+    }
+
+   
+    public int calculaDobro(int x) {
+        return x * 2;
     }
 }

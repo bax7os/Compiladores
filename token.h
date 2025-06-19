@@ -23,6 +23,8 @@ enum Names
     END_OF_FILE
 };
 
+enum TypeEnum { T_UNDEF, T_INT, T_BOOL, T_INT_ARRAY, T_CLASS };
+
 
 class Token 
 {
